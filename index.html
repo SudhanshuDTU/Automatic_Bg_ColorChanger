@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BG Changer</title>
+    <style>
+       
+    </style>
+</head>
+<body class="body">
+    <h1 class="heading">
+        Start will change the Background Color every second
+    </h1>
+    <button class="start">Start</button>
+    <button class="stop">Stop</button>
+</body>
+<script>
+    let ref;
+    document.querySelector('.start').addEventListener('click',()=>{
+      ref =  setInterval(() => {
+            const random = parseInt(Math.random()*10);
+            const arr = ["red","blue","green","yellow","orange","pink","purple","aqua","tomato","cyan"];
+            document.querySelector('body').style.backgroundColor = arr[random];
+        }, 1000);
+    });
+
+    document.querySelector('.stop').addEventListener('click',()=>{
+        clearInterval(ref);
+    });
+</script>
+</html>
